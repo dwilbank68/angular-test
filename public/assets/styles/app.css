@@ -1,0 +1,72 @@
+@import url(https://fonts.googleapis.com/css?family=Josefin+Slab);
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans);
+
+.header {
+    margin-top: 100px;
+    margin-bottom: 50px;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+li {
+    list-style-type: none;
+}
+
+.item {
+    width: 190px;
+    height: 190px;
+    margin-bottom: 50px;
+}
+
+img {
+    position: relative;
+}
+
+.overlay {
+    color: #FFF;
+    background: rgba(0,0,0,.5);
+    font-family: 'Josefin Slab', serif;
+    display: none;
+    position: absolute;
+    width: 190px;
+    height: 190px;
+    top: 0;
+}
+
+.item-name {
+    margin-top: 75px;
+}
+
+.btn-add {
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    font-style: normal;
+    font-family: Arial;
+    background-color: rgb(86,90,94);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 2px;
+    border: 2px solid rgb(64, 60, 59);
+    border-radius: 3px;
+    transition: .5s;
+}
+
+.btn-add:hover {
+    color: white;
+    background-color: black;
+}
+
+.btn-add[disabled=disabled]:hover {
+    background-color: rgb(86,90,94);
+}
+
+.remove {
+    cursor: pointer;
+}
+
+/*.item img {*/
+    /*width: 190px;*/
+    /*height: 190px;*/
+/*}*/
+
+/*.item button {*/
+    /*width: 190px;*/
+/*}*/

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Patron</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/styles/app.css">
+</head>
+<body ng-app="patronApp" class="container">
+    <div ng-controller="MainController">
+
+        <div class="row">
+            <div class="col-xs-12">
+                <h3 class="text-center header">Find & Hire Local Musicians.</h3>
+            </div>
+        </div>
+        <div class="row">
+            <ul>
+                <li ng-repeat="item in items" class="col-xs-4">
+                    <div class="item" id="id{{item.id}}">
+                        <img src="{{item.image}}" alt="no-pic" class="img-responsive"/>
+                        <div class="overlay">
+                            <div class="item-name text-center">{{item.name}}</div>
+                            <div class="item-price text-center">{{item.price | currency}}</div>
+                            <div class="item-availability text-center">{{item.availability}}</div>
+                        </div>
+                        <button ng-click='addToCart(item)'
+                                ng-disabled="{{item.availability == 'SOLD-OUT!'}}"
+                                class="btn btn-block btn-add">Add to Cart</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <section class="row" id="shopping-cart">
+            <div class="col-xs-4 col-xs-offset-4">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th class="text-center">Shopping Cart ({{totalCost | currency}})</th>
+                        </tr>
+                    </thead>
+                    <tr ng-repeat="cartItem in cartItems">
+                        <td>{{cartItem.name}}</td>
+                        <td>{{cartItem.price | currency}}</td>
+                        <td ng-click="removeFromCart(cartItem)"
+                                class="remove">&#x274c</td>
+                    </tr>
+                </table>
+            </div>
+
+
+
+        </section>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.0/angular.js"></script>
+    <script src="app.js"></script>
+    <script src="https://code.jquery.com/jquery-2.2.0.js"></script>
+    <script src="my-jQuery.js"></script>
+
+</body>
+</html>
